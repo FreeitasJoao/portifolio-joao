@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root{
+    --cor0: white;
+    --cor1: #25314b;
+    --cor2: #1e1e2a;
+
+}
+
+body{
+    margin: 0;
+    padding:0;
+    font-family: 'Bebas Neue', , sans-serif;
+    color: #1e1e2a;
+    font-weight: bold;
+    
+}
+/* HEADER*/
+
+.header-container{
+    
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    background-image: url(joao3.png.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 0 70px;
+    position: relative;
+    filter: drop-shadow(2px 4px 8px #5f5e5e);
+    
+}
+
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    max-width: 600px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 0px;
+    text-shadow: 2px 2px 2px rgba(41, 39, 39, 0.555);
+    margin-bottom: 20px;
+
+}
+
+h2{
+    margin-top: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 2px rgba(41, 39, 39, 0.555);
+    max-width: 600px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 0px;
+}
+
+.social-media {
+    margin-top: 4rem;
+    display: flex;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.486);
+
+}
+
+.social-media a {
+    text-decoration: none;
+    color: #1e1e2a;
+    padding: 1rem 4rem;
+    border: 1px solid #1e1e2a;
+    min-width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease-in-out;
+  
+
+
+}
+
+a:hover{
+    background-color: lightslategray;
+
+}
+
+/*MENU HAMBURGUER*/
+
+.checkbox-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 400ms ease-in-out 0s;
+}
+
+.checkbox .trace{
+    width: 50px;
+    height: 2px;
+    background-color:lightslategray;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1){
+    top: 26px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2){
+    top: 46px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3){
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toggle{
+    display: none;
+}
+
+/*Menu*/
+
+.menu{
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    background-color: transparent;
+    height: 4px;
+    width: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px white;
+    z-index: -1;
+    transition: 400ms ease-in-out 0s;
+}
+.menu-itens{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+
+}
+.menu-itens{
+    list-style-type: none;
+}
+
+.menu-itens ul li a{
+    margin: 10px 0;
+    color: var(--cor0);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+
+/*ANIMAÇÃO DO MENU*/
+
+#toggle:checked + .checkbox .trace:nth-child(1){
+    transform:rotate(45deg);
+    top: 47px;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(2){
+    transform: translate(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+#toggle:checked + .checkbox .trace:nth-child(3){
+    transform: rotate(-45deg);
+    top: 48px;
+}
+#toggle:checked + .checkbox{
+    background-color: #25314b;
+}
+#toggle:checked ~ .menu{
+    box-shadow: 0px 0px 0px 100vmax #25314b;
+    z-index: 1;
+}
+
+#toggle:checked ~ .menu-itens{
+    visibility: visible;
+    opacity: 1;
+}
+
+.container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin:auto;
+    min-width: 300px;
+   
+   
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: auto;
+    background-color: #25314b;
+    
+   
+}
+
+.card{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    background-image: url(azul2.png);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color: #1e1e2a;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    
+   
+
+}
+
+.card-text{
+    width: 40%;
+    letter-spacing: 1px;
+    color: white;
+    
+}
+
+.card-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-wrapper::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    border: 1px solid var(--cor1);
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.5s ease-in-out;
+}
+.card-wrapper p {
+    font-size: 0;
+    visibility: visible;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover{
+    filter: unset;
+}
+
+.card:hover > .card-wrapper::before {
+    height: 200px;
+    width: 200px;
+    opacity: 1;
+
+}
+
+.card:hover > .card-wrapper p{
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+
+/* FOOTER*/
+
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor2);
+    font-size: 25px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.301);
+}
